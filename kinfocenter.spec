@@ -37,6 +37,7 @@ BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5WidgetsAddons)
 BuildRequires: cmake(KF5XmlGui)
+BuildRequires: pkgconfig(glu)
 BuildRequires: pkgconfig(libpci)
 BuildRequires: pkgconfig(libraw1394)
 BuildRequires: ninja
