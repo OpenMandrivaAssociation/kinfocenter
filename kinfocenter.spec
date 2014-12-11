@@ -48,7 +48,8 @@ KDE Plasma 5 Info Center
 
 %prep
 %setup -qn %{realname}-%(echo %{version} |cut -d. -f1-3)
-%cmake -G Ninja
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
 ninja -C build
@@ -72,16 +73,16 @@ cat *.lang >%{name}-all.lang
 %files -f %{name}-all.lang
 %{_sysconfdir}/xdg/menus/kinfocenter.menu
 %{_bindir}/kinfocenter
-%{_libdir}/plugins/devinfo.so
-%{_libdir}/plugins/kcm_info.so
-%{_libdir}/plugins/kcm_infosummary.so
-%{_libdir}/plugins/kcm_memory.so
-%{_libdir}/plugins/kcm_nic.so
-%{_libdir}/plugins/kcm_opengl.so
-%{_libdir}/plugins/kcm_pci.so
-%{_libdir}/plugins/kcm_samba.so
-%{_libdir}/plugins/kcm_usb.so
-%{_libdir}/plugins/kcm_view1394.so
+%{_libdir}/qt5/plugins/devinfo.so
+%{_libdir}/qt5/plugins/kcm_info.so
+%{_libdir}/qt5/plugins/kcm_infosummary.so
+%{_libdir}/qt5/plugins/kcm_memory.so
+%{_libdir}/qt5/plugins/kcm_nic.so
+%{_libdir}/qt5/plugins/kcm_opengl.so
+%{_libdir}/qt5/plugins/kcm_pci.so
+%{_libdir}/qt5/plugins/kcm_samba.so
+%{_libdir}/qt5/plugins/kcm_usb.so
+%{_libdir}/qt5/plugins/kcm_view1394.so
 %{_datadir}/applications/kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
 %{_datadir}/kcmusb
