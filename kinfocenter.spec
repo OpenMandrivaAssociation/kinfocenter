@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: %{realname}%{major}
-Version: 5.1.2
+Version: 5.1.95
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
@@ -83,7 +83,7 @@ cat *.lang >%{name}-all.lang
 %{_libdir}/qt5/plugins/kcm_samba.so
 %{_libdir}/qt5/plugins/kcm_usb.so
 %{_libdir}/qt5/plugins/kcm_view1394.so
-%{_datadir}/applications/kinfocenter.desktop
+%{_datadir}/applications/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
 %{_datadir}/kcmusb
 %{_datadir}/kcmview1394
