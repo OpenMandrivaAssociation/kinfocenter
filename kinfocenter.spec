@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: %{realname}%{major}
-Version: 5.2.1
+Version: 5.2.2
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
@@ -14,13 +14,8 @@ Group: System/Libraries
 BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: extra-cmake-modules5
-BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(Qt5)
-BuildRequires: cmake(OpenGL)
-BuildRequires: pkgconfig(glesv2)
-BuildRequires: cmake(EGL)
 BuildRequires: cmake(KF5Wayland)
 BuildRequires: cmake(KF5I18n)
 BuildRequires: cmake(KF5Completion)
@@ -41,10 +36,19 @@ BuildRequires: cmake(KF5XmlGui)
 BuildRequires: pkgconfig(glu)
 BuildRequires: pkgconfig(libpci)
 BuildRequires: pkgconfig(libraw1394)
+BuildRequires: pkgconfig(egl)
+BuildRequires: pkgconfig(gl)
+BuildRequires: pkgconfig(glu)
+BuildRequires: pkgconfig(libpci)
+BuildRequires: pkgconfig(libraw1394)
+BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5Gui)
+BuildRequires: pkgconfig(Qt5Widgets)
+BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: ninja
 
 %description
-KDE Plasma 5 Info Center
+KDE Plasma 5 Info Center.
 
 %prep
 %setup -qn %{realname}-%(echo %{version} |cut -d. -f1-3)
