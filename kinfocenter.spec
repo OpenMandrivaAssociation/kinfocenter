@@ -94,4 +94,4 @@ cat *.lang >%{name}-all.lang
 %{_datadir}/kservicetypes5/kinfocentercategory.desktop
 %{_datadir}/kxmlgui5/kinfocenter
 %{_datadir}/kservices5/*
-%doc %{_docdir}/HTML/en/kinfocenter
+%doc %{_docdir}/HTML/*/kinfocenter
