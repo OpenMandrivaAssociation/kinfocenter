@@ -57,7 +57,6 @@ KDE Plasma 5 Info Center.
 %ninja_install -C build
 
 %find_lang kcm_infobase
-%find_lang kcm_infosummary
 %find_lang kcm_memory
 %find_lang kcm_pci
 %find_lang kcmdevinfo
