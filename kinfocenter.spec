@@ -56,6 +56,8 @@ KDE Plasma 5 Info Center.
 %install
 %ninja_install -C build
 
+%find_lang kcm-about-distro
+%find_lang kcm_energyinfo
 %find_lang kcm_infobase
 %find_lang kcm_memory
 %find_lang kcm_pci
@@ -72,9 +74,9 @@ cat *.lang >%{name}-all.lang
 %files -f %{name}-all.lang
 %{_sysconfdir}/xdg/menus/kinfocenter.menu
 %{_bindir}/kinfocenter
-%{_libdir}/qt5/plugins/devinfo.so
+%{_libdir}/qt5/plugins/kcm_about_distro.so
+%{_libdir}/qt5/plugins/kcm_devinfo.so
 %{_libdir}/qt5/plugins/kcm_info.so
-%{_libdir}/qt5/plugins/kcm_infosummary.so
 %{_libdir}/qt5/plugins/kcm_memory.so
 %{_libdir}/qt5/plugins/kcm_nic.so
 %{_libdir}/qt5/plugins/kcm_opengl.so
@@ -82,6 +84,9 @@ cat *.lang >%{name}-all.lang
 %{_libdir}/qt5/plugins/kcm_samba.so
 %{_libdir}/qt5/plugins/kcm_usb.so
 %{_libdir}/qt5/plugins/kcm_view1394.so
+%{_libdir}/qt5/plugins/kcms/kcm_energyinfo.so
+%{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/*.qml
+%{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.desktop
 %{_datadir}/applications/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
 %{_datadir}/kcmusb
