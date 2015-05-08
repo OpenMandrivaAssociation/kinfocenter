@@ -3,10 +3,10 @@
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
-Name: kinfocenter
+Name: %{realname}%{major}
 Version: 5.3.0
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
+Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
 License: GPL
@@ -42,13 +42,12 @@ BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Test)
-%rename kinfocenter5 < 5.3.0-2
 
 %description
 KDE Plasma 5 Info Center.
 
 %prep
-%setup -q
+%setup -qn %{realname}-%(echo %{version} |cut -d. -f1-3)
 %cmake_kde5
 
 %build
