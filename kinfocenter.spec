@@ -58,7 +58,6 @@ KDE Plasma 5 Info Center.
 
 %find_lang kcm-about-distro
 %find_lang kcm_energyinfo
-%find_lang kcm_infobase
 %find_lang kcm_memory
 %find_lang kcm_pci
 %find_lang kcmdevinfo
