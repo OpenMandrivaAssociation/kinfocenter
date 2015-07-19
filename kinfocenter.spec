@@ -5,7 +5,7 @@
 
 Name: %{realname}%{major}
 Version: 5.3.2
-Release: 1
+Release: 2
 Source0: hhttp://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
