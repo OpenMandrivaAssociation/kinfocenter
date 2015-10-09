@@ -5,7 +5,7 @@
 
 Name: %{realname}%{major}
 Version: 5.4.2
-Release: 1
+Release: 2
 Source0: hhttp://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
@@ -43,6 +43,7 @@ BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Test)
 Conflicts:		kinfocenter < 5.3.1
+Obsoletes:	about-distro
 
 %description
 KDE Plasma 5 Info Center.
