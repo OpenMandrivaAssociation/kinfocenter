@@ -42,8 +42,8 @@ BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Test)
-Conflicts:		kinfocenter < 5.3.1
-Obsoletes:	about-distro
+Conflicts: kinfocenter < 5.3.1
+Obsoletes: about-distro
 
 %description
 KDE Plasma 5 Info Center.
@@ -60,6 +60,7 @@ KDE Plasma 5 Info Center.
 
 %find_lang kcm-about-distro
 %find_lang kcm_energyinfo
+%find_lang kcm_fileindexermonitor
 %find_lang kcm_memory
 %find_lang kcm_pci
 %find_lang kcmdevinfo
@@ -88,6 +89,10 @@ cat *.lang >%{name}-all.lang
 %{_libdir}/qt5/plugins/kcms/kcm_energyinfo.so
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/*.qml
 %{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.desktop
+%{_libdir}/qt5/plugins/kcms/kcm_fileindexermonitor.so
+%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui/*.qml
+%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui/*.js
+%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/metadata.desktop
 %{_datadir}/applications/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
 %{_datadir}/kcmusb
