@@ -11,7 +11,7 @@ Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
-Patch0: kinfocenter-5.5.3-set-logo-to-128-size.patch
+#Patch0: kinfocenter-5.5.3-set-logo-to-128-size.patch
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5Wayland)
