@@ -5,12 +5,13 @@
 
 Name: %{realname}%{major}
 Version: 5.5.3
-Release: 1
+Release: 2
 Source0: hhttp://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
+Patch0: kinfocenter-5.5.3-set-logo-to-128-size.patch
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5Wayland)
@@ -50,6 +51,7 @@ KDE Plasma 5 Info Center.
 
 %prep
 %setup -qn %{realname}-%(echo %{version} |cut -d. -f1-3)
+%apply_patches
 %cmake_kde5
 
 %build
