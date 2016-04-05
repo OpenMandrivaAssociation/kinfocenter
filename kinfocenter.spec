@@ -1,9 +1,8 @@
 %define realname kinfocenter
-%define major 5
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
-Name: %{realname}%{major}
+Name: %{realname}
 Version: 5.6.1
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
