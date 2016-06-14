@@ -4,8 +4,8 @@
 %define major 5
 
 Name: %{realname}%{major}
-Version: 5.6.4
-Release: 2
+Version: 5.6.5
+Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
