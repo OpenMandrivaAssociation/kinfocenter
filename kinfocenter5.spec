@@ -4,7 +4,7 @@
 %define major 5
 
 Name: %{realname}%{major}
-Version: 5.6.5
+Version: 5.7.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
@@ -60,19 +60,19 @@ KDE Plasma 5 Info Center.
 %install
 %ninja_install -C build
 
-%find_lang kcm-about-distro
-%find_lang kcm_energyinfo
-%find_lang kcm_fileindexermonitor
-%find_lang kcm_memory
-%find_lang kcm_pci
-%find_lang kcmdevinfo
-%find_lang kcminfo
-%find_lang kcmnic
-%find_lang kcmopengl
-%find_lang kcmsamba
-%find_lang kcmusb
-%find_lang kcmview1394
-%find_lang kinfocenter
+%find_lang kcm-about-distro || touch kcm-about-distro.lang
+%find_lang kcm_energyinfo || touch kcm_energyinfo.lang
+%find_lang kcm_fileindexermonitor || touch kcm_fileindexermonitor.lang
+%find_lang kcm_memory || touch kcm_memory.lang
+%find_lang kcm_pci || touch kcm_pci.lang
+%find_lang kcmdevinfo || touch kcmdevinfo.lang
+%find_lang kcminfo || touch kcminfo.lang
+%find_lang kcmnic || touch kcmnic.lang
+%find_lang kcmopengl || touch kcmopengl.lang
+%find_lang kcmsamba || touch kcmsamba.lang
+%find_lang kcmusb || touch kcmusb.lang
+%find_lang kcmview1394 || touch kcmview1394.lang
+%find_lang kinfocenter || touch kinfocenter.lang
 cat *.lang >%{name}-all.lang
 
 %files -f %{name}-all.lang
