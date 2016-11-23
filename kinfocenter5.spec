@@ -4,7 +4,7 @@
 %define major 5
 
 Name: %{realname}%{major}
-Version: 5.8.3
+Version: 5.8.4
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
@@ -90,11 +90,11 @@ cat *.lang >%{name}-all.lang
 %{_libdir}/qt5/plugins/kcm_view1394.so
 %{_libdir}/qt5/plugins/kcms/kcm_energyinfo.so
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/*.qml
-%{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.desktop
+%{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.*
 %{_libdir}/qt5/plugins/kcms/kcm_fileindexermonitor.so
 %{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui/*.qml
 %{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui/*.js
-%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/metadata.desktop
+%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/metadata.*
 %{_datadir}/applications/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
 %{_datadir}/kcmusb
