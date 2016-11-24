@@ -1,12 +1,10 @@
-%define realname kinfocenter
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define major 5
 
-Name: %{realname}%{major}
+Name: kinfocenter
 Version: 5.8.4
 Release: 1
-Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{realname}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
 License: GPL
@@ -44,13 +42,14 @@ BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Test)
 Conflicts: kinfocenter < 5.3.1
+Obsoletes: kinfocenter < 2:4.11.23
 Obsoletes: about-distro
 
 %description
 KDE Plasma 5 Info Center.
 
 %prep
-%setup -qn %{realname}-%(echo %{version} |cut -d. -f1-3)
+%setup -qn %{name}-%(echo %{version} |cut -d. -f1-3)
 %apply_patches
 %cmake_kde5
 
