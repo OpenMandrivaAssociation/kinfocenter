@@ -44,6 +44,7 @@ BuildRequires: pkgconfig(Qt5Test)
 Conflicts: kinfocenter < 5.3.1
 Obsoletes: kinfocenter < 2:4.11.23
 Obsoletes: about-distro
+%rename kinfocenter5
 
 %description
 KDE Plasma 5 Info Center.
