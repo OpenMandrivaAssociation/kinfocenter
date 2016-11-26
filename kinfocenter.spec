@@ -2,8 +2,10 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kinfocenter
+# (tpg) add this to obsolete old kinfocenter from kde-workspace
+Epoch: 2
 Version: 5.8.4
-Release: 3
+Release: 4
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
@@ -42,7 +44,7 @@ BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Test)
 Conflicts: kinfocenter < %{version}
-Obsoletes: kinfocenter < 2:4.11.23
+Obsoletes: kinfocenter < 2:4.11.22-9
 Obsoletes: about-distro
 %rename kinfocenter5
 
