@@ -1,0 +1,11 @@
+--- kinfocenter-5.12.2/Modules/CMakeLists.txt.omv~	2018-02-23 16:28:43.787447386 +0100
++++ kinfocenter-5.12.2/Modules/CMakeLists.txt	2018-02-23 16:28:53.216466498 +0100
+@@ -44,7 +44,7 @@ set_package_properties(PCIUTILS PROPERTI
+                        PURPOSE "View PCI details in kinfocenter."
+                       )
+ 
+-if(NOT APPLE AND NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm" AND NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
++if(NOT APPLE)
+     add_subdirectory( pci )
+ endif()
+ endif()
