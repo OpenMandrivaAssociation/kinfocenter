@@ -1,4 +1,5 @@
 removed_sources:
   kinfocenter-5.12.3.tar.xz: 520a609ed1c384bf408d49f93d172bead63abe4a
-sources:
   kinfocenter-5.12.6.tar.xz: 7a8cb69d7bd40ac1314e27c76913a763606f371b
+sources:
+  kinfocenter-5.12.7.tar.xz: 09a5b3364041ed0300b1c715559aa597e3bd9615
