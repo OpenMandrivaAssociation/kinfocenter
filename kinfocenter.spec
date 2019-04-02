@@ -2,10 +2,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kinfocenter
-# (tpg) add this to obsolete old kinfocenter from kde-workspace
-Epoch: 2
-Version: 5.15.3
-Release: 2
+Version: 5.15.4
+Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
