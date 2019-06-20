@@ -2,7 +2,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kinfocenter
-Version: 5.15.5
+Version: 5.16.1
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
@@ -96,6 +96,7 @@ cat *.lang >%{name}-all.lang
 %{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui/*.qml
 %{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui/*.js
 %{_datadir}/kpackage/kcms/kcm_fileindexermonitor/metadata.*
+%{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 %{_datadir}/applications/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
 %{_datadir}/kcmusb
