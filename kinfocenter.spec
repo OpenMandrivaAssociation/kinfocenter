@@ -2,7 +2,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kinfocenter
-Version:	5.17.4
+Version:	5.17.5
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
@@ -51,8 +51,7 @@ Obsoletes: about-distro
 KDE Plasma 5 Info Center.
 
 %prep
-%setup -qn %{name}-%(echo %{version} |cut -d. -f1-3)
-%apply_patches
+%autosetup -p1 -n %{name}-%(echo %{version} |cut -d. -f1-3)
 %cmake_kde5
 
 %build
