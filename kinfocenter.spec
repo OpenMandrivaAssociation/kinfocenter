@@ -3,7 +3,7 @@
 
 Name: kinfocenter
 Version:	5.18.90
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
@@ -42,6 +42,10 @@ BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Test)
+BuildRequires: kirigami
+BuildRequires: systemsettings
+Requires: kirigami
+Requires: systemsettings
 Conflicts: kinfocenter < %{version}
 Obsoletes: kinfocenter < 2:4.11.22-9
 Obsoletes: about-distro
