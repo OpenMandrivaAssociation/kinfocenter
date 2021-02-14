@@ -2,7 +2,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kinfocenter
-Version:	5.20.5
+Version:	5.21.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
@@ -87,13 +87,15 @@ cat *.lang >%{name}-all.lang
 %{_libdir}/qt5/plugins/kcm_devinfo.so
 %{_libdir}/qt5/plugins/kcm_info.so
 %{_libdir}/qt5/plugins/kcm_memory.so
-%{_libdir}/qt5/plugins/kcm_nic.so
 %{_libdir}/qt5/plugins/kcm_opengl.so
 %{_libdir}/qt5/plugins/kcm_pci.so
-%{_libdir}/qt5/plugins/kcm_samba.so
 %{_libdir}/qt5/plugins/kcm_usb.so
 %{_libdir}/qt5/plugins/kcm_view1394.so
 %{_libdir}/qt5/plugins/kcms/kcm_energyinfo.so
+%{_libdir}/qt5/plugins/kcms/kcm_nic.so
+%{_libdir}/qt5/plugins/kcms/kcm_samba.so
+%{_datadir}/kpackage/kcms/kcm_nic
+%{_datadir}/kpackage/kcms/kcmsamba
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/*.qml
 %{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.*
 %{_libdir}/qt5/plugins/kcms/kcm_fileindexermonitor.so
