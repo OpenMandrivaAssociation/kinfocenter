@@ -1,8 +1,7 @@
-%define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kinfocenter
-Version:	5.21.5
+Version:	5.22.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
@@ -66,7 +65,6 @@ KDE Plasma 5 Info Center.
 
 %find_lang kcm-about-distro || touch kcm-about-distro.lang
 %find_lang kcm_energyinfo || touch kcm_energyinfo.lang
-%find_lang kcm_fileindexermonitor || touch kcm_fileindexermonitor.lang
 %find_lang kcm_memory || touch kcm_memory.lang
 %find_lang kcm_nic || touch kcm_nic.lang
 %find_lang kcm_pci || touch kcm_pci.lang
@@ -98,15 +96,9 @@ cat *.lang >%{name}-all.lang
 %{_datadir}/kpackage/kcms/kcmsamba
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/*.qml
 %{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.*
-%{_libdir}/qt5/plugins/kcms/kcm_fileindexermonitor.so
-%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui/*.qml
-%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui/*.js
-%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/metadata.*
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 %{_datadir}/applications/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
-%{_datadir}/kcmusb
-%{_datadir}/kcmview1394
 %{_datadir}/kservicetypes5/kinfocentercategory.desktop
 %{_datadir}/kservices5/*
 %doc %{_docdir}/HTML/*/kinfocenter
