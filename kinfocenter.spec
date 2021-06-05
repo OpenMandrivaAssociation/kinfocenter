@@ -41,6 +41,7 @@ BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Test)
+BuildRequires: pkgconfig(libusb-1.0)
 BuildRequires: kirigami
 BuildRequires: systemsettings
 Requires: kirigami
