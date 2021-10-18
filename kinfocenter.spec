@@ -2,7 +2,7 @@
 
 Name: kinfocenter
 Version:	5.23.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
@@ -43,8 +43,12 @@ BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(libusb-1.0)
 BuildRequires: kirigami
 BuildRequires: systemsettings
+BuildRequires: vulkan-tools
+BuildRequires: wayland-utils
 Requires: kirigami
 Requires: systemsettings
+Requires: vulkan-tools
+Requires: wayland-utils
 Conflicts: kinfocenter < %{version}
 Obsoletes: kinfocenter < 2:4.11.22-9
 Obsoletes: about-distro
