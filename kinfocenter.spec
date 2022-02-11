@@ -1,8 +1,8 @@
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kinfocenter
-Version:	5.23.5
-Release: 2
+Version: 5.24.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
@@ -88,42 +88,22 @@ KDE Plasma 5 Info Center.
 cat *.lang >%{name}-all.lang
 
 %files -f %{name}-all.lang
+%doc %{_docdir}/HTML/*/kinfocenter
 %{_sysconfdir}/xdg/menus/kinfocenter.menu
 %{_bindir}/kinfocenter
-%{_libdir}/qt5/plugins/kcm_devinfo.so
-%{_libdir}/qt5/plugins/kcm_info.so
-%{_libdir}/qt5/plugins/kcm_memory.so
-%{_libdir}/qt5/plugins/kcm_opengl.so
-%{_libdir}/qt5/plugins/kcm_pci.so
-%{_libdir}/qt5/plugins/kcm_usb.so
-%{_libdir}/qt5/plugins/kcm_view1394.so
-%{_libdir}/qt5/plugins/kcms/kcm_energyinfo.so
-%{_libdir}/qt5/plugins/kcms/kcm_nic.so
-%{_libdir}/qt5/plugins/kcms/kcm_samba.so
+%{_libdir}/qt5/qml/org/kde/kinfocenter
+%{_libdir}/qt5/plugins/plasma/kcms/*.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/*.so
 %{_datadir}/kpackage/kcms/kcm_nic
 %{_datadir}/kpackage/kcms/kcmsamba
-%{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/*.qml
-%{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.*
-%{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
-%{_datadir}/applications/org.kde.kinfocenter.desktop
-%{_datadir}/desktop-directories/kinfocenter.directory
-%{_datadir}/kservicetypes5/kinfocentercategory.desktop
-%{_datadir}/kservices5/*
-%doc %{_docdir}/HTML/*/kinfocenter
-%{_libdir}/qt5/plugins/kcms/kcm_about-distro.so
-%{_libdir}/qt5/plugins/kcms/kcm_cpu.so
-%{_libdir}/qt5/plugins/kcms/kcm_interrupts.so
-%{_libdir}/qt5/plugins/kcms/kcm_vulkan.so
-%{_libdir}/qt5/plugins/kcms/kcm_wayland.so
-%{_libdir}/qt5/qml/org/kde/kinfocenter
-%{_datadir}/kinfocenter/categories/basicinformation.desktop
-%{_datadir}/kinfocenter/categories/detailedinformation.desktop
-%{_datadir}/kinfocenter/categories/deviceinfocategory.desktop
-%{_datadir}/kinfocenter/categories/graphicalinfocategory.desktop
-%{_datadir}/kinfocenter/categories/lostfoundcategory.desktop
-%{_datadir}/kinfocenter/categories/networkinfocategory.desktop
 %{_datadir}/kpackage/kcms/kcm_about-distro
 %{_datadir}/kpackage/kcms/kcm_cpu
 %{_datadir}/kpackage/kcms/kcm_interrupts
 %{_datadir}/kpackage/kcms/kcm_vulkan
 %{_datadir}/kpackage/kcms/kcm_wayland
+%{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/*.qml
+%{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
+%{_datadir}/applications/org.kde.kinfocenter.desktop
+%{_datadir}/desktop-directories/kinfocenter.directory
+%{_datadir}/kservicetypes5/kinfocentercategory.desktop
+%{_datadir}/kinfocenter/categories/*.desktop
