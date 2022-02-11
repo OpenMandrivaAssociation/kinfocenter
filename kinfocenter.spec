@@ -45,10 +45,18 @@ BuildRequires: kirigami
 BuildRequires: systemsettings
 BuildRequires: vulkan-tools
 BuildRequires: wayland-utils
+BuildRequires: xdpyinfo
+BuildRequires: eglinfo
+BuildRequires: glxinfo
+BuildRequires: pciutils
 Requires: kirigami
 Requires: systemsettings
 Requires: vulkan-tools
 Requires: wayland-utils
+Requires: xdpyinfo
+Requires: eglinfo
+Requires: glxinfo
+Requires: pciutils
 Conflicts: kinfocenter < %{version}
 Obsoletes: kinfocenter < 2:4.11.22-9
 Obsoletes: about-distro
@@ -85,12 +93,17 @@ KDE Plasma 5 Info Center.
 %find_lang kcmusb || touch kcmusb.lang
 %find_lang kcmview1394 || touch kcmview1394.lang
 %find_lang kinfocenter || touch kinfocenter.lang
+%find_lang kcm_egl || touch kcm_egl.lang
+%find_lang kcm_glx || touch kcm_glx.lang
+%find_lang kcm_pci || touch kcm_pci.lang
+%find_lang kcm_xserver || touch kcm_xserver.lang
 cat *.lang >%{name}-all.lang
 
 %files -f %{name}-all.lang
 %doc %{_docdir}/HTML/*/kinfocenter
 %{_sysconfdir}/xdg/menus/kinfocenter.menu
 %{_bindir}/kinfocenter
+%{_libdir}/libKInfoCenterInternal.so
 %{_libdir}/qt5/qml/org/kde/kinfocenter
 %{_libdir}/qt5/plugins/plasma/kcms/*.so
 %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/*.so
@@ -101,6 +114,10 @@ cat *.lang >%{name}-all.lang
 %{_datadir}/kpackage/kcms/kcm_interrupts
 %{_datadir}/kpackage/kcms/kcm_vulkan
 %{_datadir}/kpackage/kcms/kcm_wayland
+%{_datadir}/kpackage/kcms/kcm_egl
+%{_datadir}/kpackage/kcms/kcm_glx
+%{_datadir}/kpackage/kcms/kcm_pci
+%{_datadir}/kpackage/kcms/kcm_xserver
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/*.qml
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 %{_datadir}/applications/org.kde.kinfocenter.desktop
