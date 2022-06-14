@@ -1,8 +1,8 @@
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kinfocenter
-Version: 5.24.5
-Release: 2
+Version: 5.25.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
@@ -97,6 +97,7 @@ KDE Plasma 5 Info Center.
 %find_lang kcm_glx || touch kcm_glx.lang
 %find_lang kcm_pci || touch kcm_pci.lang
 %find_lang kcm_xserver || touch kcm_xserver.lang
+%find_lang kcm_firmware_security
 cat *.lang >%{name}-all.lang
 
 %files -f %{name}-all.lang
@@ -111,6 +112,7 @@ cat *.lang >%{name}-all.lang
 %{_datadir}/kpackage/kcms/kcmsamba
 %{_datadir}/kpackage/kcms/kcm_about-distro
 %{_datadir}/kpackage/kcms/kcm_cpu
+%{_datadir}/kpackage/kcms/kcm_firmware_security
 %{_datadir}/kpackage/kcms/kcm_interrupts
 %{_datadir}/kpackage/kcms/kcm_vulkan
 %{_datadir}/kpackage/kcms/kcm_wayland
@@ -118,9 +120,14 @@ cat *.lang >%{name}-all.lang
 %{_datadir}/kpackage/kcms/kcm_glx
 %{_datadir}/kpackage/kcms/kcm_pci
 %{_datadir}/kpackage/kcms/kcm_xserver
-%{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/*.qml
+%{_datadir}/kpackage/kcms/kcm_energyinfo
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 %{_datadir}/applications/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
 %{_datadir}/kservicetypes5/kinfocentercategory.desktop
 %{_datadir}/kinfocenter/categories/*.desktop
+%{_libdir}/libexec/kauth/kinfocenter-dmidecode-helper
+%{_datadir}/applications/kcm_about-distro.desktop
+%{_datadir}/dbus-1/system-services/org.kde.kinfocenter.dmidecode.service
+%{_datadir}/dbus-1/system.d/org.kde.kinfocenter.dmidecode.conf
+%{_datadir}/polkit-1/actions/org.kde.kinfocenter.dmidecode.policy
