@@ -2,7 +2,7 @@
 
 Name: kinfocenter
 Version: 5.25.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
@@ -49,6 +49,8 @@ BuildRequires: xdpyinfo
 BuildRequires: eglinfo
 BuildRequires: glxinfo
 BuildRequires: pciutils
+BuildRequires: dmidecode
+BuildRequires: fwupd
 Requires: kirigami
 Requires: systemsettings
 Requires: vulkan-tools
@@ -57,6 +59,8 @@ Requires: xdpyinfo
 Requires: eglinfo
 Requires: glxinfo
 Requires: pciutils
+Requires: dmidecode
+Requires: fwupd
 Conflicts: kinfocenter < %{version}
 Obsoletes: kinfocenter < 2:4.11.22-9
 Obsoletes: about-distro
