@@ -1,8 +1,8 @@
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kinfocenter
-Version: 5.25.5
-Release: 2
+Version: 5.25.90
+Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
@@ -100,6 +100,7 @@ KDE Plasma 5 Info Center.
 %find_lang kcm_pci || touch kcm_pci.lang
 %find_lang kcm_xserver || touch kcm_xserver.lang
 %find_lang kcm_firmware_security
+%find_lang kcm_kwinsupportinfo
 cat *.lang >%{name}-all.lang
 
 %files -f %{name}-all.lang
@@ -123,10 +124,10 @@ cat *.lang >%{name}-all.lang
 %{_datadir}/kpackage/kcms/kcm_pci
 %{_datadir}/kpackage/kcms/kcm_xserver
 %{_datadir}/kpackage/kcms/kcm_energyinfo
+%{_datadir}/kpackage/kcms/kcm_kwinsupportinfo
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 %{_datadir}/applications/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
-%{_datadir}/kservicetypes5/kinfocentercategory.desktop
 %{_datadir}/kinfocenter/categories/*.desktop
 %{_libdir}/libexec/kauth/kinfocenter-dmidecode-helper
 %{_datadir}/applications/kcm_about-distro.desktop
