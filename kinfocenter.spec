@@ -1,7 +1,7 @@
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kinfocenter
-Version: 5.26.5
+Version: 5.27.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
@@ -90,6 +90,7 @@ KDE Plasma 5 Info Center.
 %find_lang kcmdevinfo || touch kcmdevinfo.lang
 %find_lang kcminfo || touch kcminfo.lang
 %find_lang kcmnic || touch kcmnic.lang
+%find_lang kcm_opencl || touch kcm_opencl.lang
 %find_lang kcmopengl || touch kcmopengl.lang
 %find_lang kcmsamba || touch kcmsamba.lang
 %find_lang kcmusb || touch kcmusb.lang
@@ -119,6 +120,7 @@ cat *.lang >%{name}-all.lang
 %{_datadir}/kpackage/kcms/kcm_interrupts
 %{_datadir}/kpackage/kcms/kcm_vulkan
 %{_datadir}/kpackage/kcms/kcm_wayland
+%{_datadir}/kpackage/kcms/kcm_opencl
 %{_datadir}/kpackage/kcms/kcm_egl
 %{_datadir}/kpackage/kcms/kcm_glx
 %{_datadir}/kpackage/kcms/kcm_pci
