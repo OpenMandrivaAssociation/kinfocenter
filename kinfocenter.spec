@@ -2,7 +2,7 @@
 
 Name: kinfocenter
 Version: 5.27.3
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
@@ -50,7 +50,11 @@ BuildRequires: eglinfo
 BuildRequires: glxinfo
 BuildRequires: pciutils
 BuildRequires: dmidecode
+%ifarch %{x86_64} %{ix86} %{aarch64}
 BuildRequires: fwupd
+BuildRequires: aha
+%endif
+BuildRequires: clinfo
 Requires: kirigami
 Requires: systemsettings
 Requires: vulkan-tools
@@ -60,7 +64,11 @@ Requires: eglinfo
 Requires: glxinfo
 Requires: pciutils
 Requires: dmidecode
+%ifarch %{x86_64} %{ix86} %{aarch64}
 Requires: fwupd
+Requires: aha
+%endif
+Requires: clinfo
 Obsoletes: about-distro
 %rename kinfocenter5
 
