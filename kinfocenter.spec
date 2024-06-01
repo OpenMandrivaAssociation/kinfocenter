@@ -2,7 +2,7 @@
 
 Name: kinfocenter
 Version: 5.27.11
-Release: 2
+Release: 3
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Info Center
 URL: http://kde.org/
@@ -58,8 +58,8 @@ BuildRequires: clinfo
 Requires: kirigami
 Requires: systemsettings
 Requires: vulkan-tools
-Requires: wayland-utils
-Requires: xdpyinfo
+Requires: (wayland-utils if kwindowsystem-wayland)
+Requires: (xdpyinfo if kwindowsystem-x11)
 Requires: eglinfo
 Requires: glxinfo
 Requires: pciutils
