@@ -3,9 +3,9 @@
 %define gitbranch Plasma/6.0
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Name: plasma6-kinfocenter
+Name: kinfocenter
 Version: 6.3.4
-Release: %{?git:0.%{git}.}2
+Release: %{?git:0.%{git}.}3
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/kinfocenter/-/archive/%{gitbranch}/kinfocenter-%{gitbranchd}.tar.bz2#/kinfocenter-%{git}.tar.bz2
 %else
@@ -79,14 +79,13 @@ BuildSystem: cmake
 BuildOption: -DBUILD_QCH:BOOL=ON
 BuildOption: -DBUILD_WITH_QT6:BOOL=ON
 BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+# Renamed after 6.0 2025-05-01
+%rename plasma6-kinfocenter
 
 %description
 KDE Plasma 6 Info Center.
 
-%install -a
-%find_lang kinfocenter --all-name --with-html
-
-%files -f kinfocenter.lang
+%files -f %{name}.lang
 %{_bindir}/kinfocenter
 %{_libdir}/libKInfoCenterInternal.so
 %{_qtdir}/qml/org/kde/kinfocenter
