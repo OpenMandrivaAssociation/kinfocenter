@@ -4,7 +4,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: kinfocenter
-Version: 6.6.5
+Version: 6.7.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/kinfocenter/-/archive/%{gitbranch}/kinfocenter-%{gitbranchd}.tar.bz2#/kinfocenter-%{git}.tar.bz2
@@ -101,5 +101,4 @@ KDE Plasma 6 Info Center.
 %{_datadir}/dbus-1/system-services/org.kde.kinfocenter.dmidecode.service
 %{_datadir}/dbus-1/system.d/org.kde.kinfocenter.dmidecode.conf
 %{_datadir}/polkit-1/actions/org.kde.kinfocenter.dmidecode.policy
-%{_datadir}/applications/kcm_energyinfo.desktop
 %{_datadir}/kinfocenter
