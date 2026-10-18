@@ -50,6 +50,7 @@ BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Widgets)
+BuildRequires: cmake(Qt6Graphs)
 BuildRequires: cmake(Qt6Test)
 BuildRequires: pkgconfig(libusb-1.0)
 BuildRequires: vulkan-tools
