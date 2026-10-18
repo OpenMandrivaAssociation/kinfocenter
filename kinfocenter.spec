@@ -94,7 +94,7 @@ KDE Plasma 6 Info Center.
 %{_qtdir}/plugins/plasma/kcms/kinfocenter/*.so
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 %{_datadir}/applications/org.kde.kinfocenter.desktop
-%{_libdir}/libexec/kinfocenter-opengl-helper
+%{_libdir}/libexec/kinfocenter-egl-helper
 %{_libdir}/libexec/kinfocenter-vulkan-helper
 %{_libdir}/libexec/kf6/kauth/kinfocenter-dmidecode-helper
 %{_datadir}/applications/kcm_about-distro.desktop
